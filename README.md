@@ -1,4 +1,5 @@
 # Eazy Way Shuttles Waitlist Site
+### v1.0.0
 
 Static GitHub Pages landing page for the Eazy Way Shuttles waitlist.
 
