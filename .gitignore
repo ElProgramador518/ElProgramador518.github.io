@@ -1,0 +1,14 @@
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local env/secrets - do not commit
+.env
+*.pem
+*.key
+*.p12
+*.pfx
+
+**:Zone.Identifier
