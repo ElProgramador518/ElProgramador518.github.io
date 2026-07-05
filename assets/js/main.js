@@ -38,7 +38,7 @@ function handleSubmit(e) {
   btn.textContent = 'Saving your spot...';
 
   // ── Paste your Google Form field IDs below ──
-  const FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSeNJJoZ09gj3-I2NkNpqbo2iH5O36ax646pr1_nG5s2PhLnFA/formResponse';
+  const FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSeNJJoZ09gj3-I2NkNpqbo2iH5O36ax646pr1_nG5s2PhLnFA/viewform?usp=dialog';
   const params = new URLSearchParams({
     'entry.1943683663': email,
     'entry.1611552510': name,
