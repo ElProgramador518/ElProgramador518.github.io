@@ -22,14 +22,8 @@ function handleSubmit(e) {
   e.preventDefault();
   const email    = document.getElementById('email').value;
   const name     = document.getElementById('nameInput').value;
-  const stateSelect    = document.getElementById('stateSelect').value;
-  const state    = stateSelect === 'sOther'
-    ? document.getElementById('stateOther').value 
-    : stateSelect;
-  const citySelect     = document.getElementById('citySelect').value;
-  const city     = citySelect === 'cOther'
-    ? document.getElementById('cityOther').value 
-    : citySelect;
+  const state    = document.getElementById('stateSelect').value;
+  const city     = document.getElementById('citySelect').value;
   const heard    = document.getElementById('hearInput').value;
   if (!email && !state && !city) return;
 
@@ -42,14 +36,8 @@ function handleSubmit(e) {
   const params = new URLSearchParams({
     'entry.1943683663': email,
     'entry.1611552510': name,
-    'entry.1752961368': state === 'sOther'
-      ? '__other_option__' : state,
-    'entry.1752961368.other_option_response': state === 'sOther'
-      ? document.getElementById('stateOther').value : '',
-    'entry.624843853': city === 'cOther'
-      ? '__other_option__' : city,
-    'entry.624843853.other_option_response': city === 'cOther'
-      ? document.getElementById('cityOther').value : '',
+    'entry.1752961368': state,
+    'entry.624843853': city,
     'entry.1432154152': heard,
   });
 
@@ -66,12 +54,3 @@ function showToast() {
   setTimeout(() => t.classList.remove('show'), 4000);
 }
 
-document.getElementById('citySelect').addEventListener('change', function() {
-  const cityOther = document.getElementById('cityOther');
-  cityOther.style.display = this.value === 'cOther' ? 'block' : 'none';
-});
-
-document.getElementById('stateSelect').addEventListener('change', function() {
-  const stateOther = document.getElementById('stateOther');
-  stateOther.style.display = this.value === 'sOther' ? 'block' : 'none';
-});
